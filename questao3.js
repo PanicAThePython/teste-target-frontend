@@ -29,7 +29,7 @@ function calcMediaFaturamento(){
 
     for (let i = 0; i < data.length; i ++){
         let valorDaVez = data[i]["valor"]
-        if (valorDaVez != 0){
+        if (valorDaVez !== 0){
             total+=valorDaVez
             quantidadeFaturamentosValidos+=1
         }
@@ -37,18 +37,18 @@ function calcMediaFaturamento(){
     return total/quantidadeFaturamentosValidos
 }
 
-function getFaturamentosMaioresQueAMedia(){
-    let listaMaiores = []
+function getQuantidadeDiasComFaturamentosMaioresQueAMedia(){
+    let qtdDiasComMaiorFaturamento = 0
     for (let i = 0; i < data.length; i ++){
         let valorDaVez = data[i]["valor"]
-        if (valorDaVez > mediaFaturamento) listaMaiores.push(valorDaVez)
+        if (valorDaVez > mediaFaturamento) qtdDiasComMaiorFaturamento+=1
     }
 
-    return listaMaiores
+    return qtdDiasComMaiorFaturamento
 }
 
 console.log("menor valor: " + getMenorValorFaturamento())
 console.log("maior valor: " + getMaiorValorFaturamento())
 const mediaFaturamento = calcMediaFaturamento()
 console.log("media: " + mediaFaturamento)
-console.log("valores maiores que a media: \n" + getFaturamentosMaioresQueAMedia())
+console.log("quantidade de dias com valores maiores que a media: " + getQuantidadeDiasComFaturamentosMaioresQueAMedia())

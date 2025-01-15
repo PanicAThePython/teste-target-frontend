@@ -26,6 +26,7 @@ function percentualOutros(){
     return ((outros/total)*100).toFixed(2)
 }
 
+console.log("PERCENTUAL DE PARTICIPAÇÃO DE CADA ESTADO")
 console.log("SP " + percentualSP() + "%")
 console.log("RJ " + percentualRJ() + "%")
 console.log("MG " + percentualMG() + "%")
